@@ -1,12 +1,13 @@
 {% set version = "1.9.10" %}
+{% set sha256 = "5071c995a03e97e2bcfe0c5cc265330160316733336bb87dfcea3fc381065316" %}
 
 package:
   name: thrust
   version: {{ version }}
 
 source:
-  - url: https://github.com/thrust/thrust/archive/{{ version }}.tar.gz
-    sha256: 5071c995a03e97e2bcfe0c5cc265330160316733336bb87dfcea3fc381065316
+  url: https://github.com/thrust/thrust/archive/{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   number: 0
