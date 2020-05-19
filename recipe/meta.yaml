@@ -1,5 +1,5 @@
-{% set version = "1.9.9" %}
-{% set sha256 = "74740b94e0c62e1e54f9880cf1eeb2d0bfb2203ae35fd72ece608f9b8e073ef7" %}
+{% set version = "1.9.10" %}
+{% set sha256 = "5071c995a03e97e2bcfe0c5cc265330160316733336bb87dfcea3fc381065316" %}
 
 package:
   name: thrust
