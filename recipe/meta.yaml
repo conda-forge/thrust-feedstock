@@ -1,5 +1,5 @@
-{% set version = "1.9.10" %}
-{% set sha256 = "5071c995a03e97e2bcfe0c5cc265330160316733336bb87dfcea3fc381065316" %}
+{% set version = "1.10.10" %}
+{% set sha256 = "8149b30eabbc9a2af5f038fb2b7f91070d4e01266377e0cd12e3af3feda93f8f" %}
 
 package:
   name: thrust
@@ -39,3 +39,4 @@ about:
 extra:
   recipe-maintainers:
     - rongou
+    - kkraus
