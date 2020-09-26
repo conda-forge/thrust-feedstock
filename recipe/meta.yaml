@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/thrust/thrust/archive/{{ version }}.tar.gz
+  url: https://github.com/NVIDIA/thrust/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: mkdir -p "$PREFIX"/include && cp -r thrust "$PREFIX"/include  # [not win]
 
 requirements:
