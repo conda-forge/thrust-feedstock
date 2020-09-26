@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: mkdir -p "$PREFIX"/include && cp -r thrust "$PREFIX"/include  # [not win]
 
 requirements:
