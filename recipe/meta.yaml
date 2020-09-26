@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/thrust/thrust/archive/{{ version }}.tar.gz
+  url: https://github.com/NVIDIA/thrust/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
