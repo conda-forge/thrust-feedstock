@@ -5,9 +5,13 @@ Home: https://github.com/thrust/thrust
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/thrust-feedstock/blob/master/LICENSE.txt)
 
 Summary: Thrust is a C++ parallel programming library which resembles the C++ Standard Library.
+
+Development: https://github.com/thrust/thrust
+
+Documentation: https://thrust.github.io/
 
 Thrust's high-level interface greatly enhances programmer productivity while enabling
 performance portability between GPUs and multicore CPUs. Interoperability with established
