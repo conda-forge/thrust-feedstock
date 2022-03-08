@@ -1,7 +1,7 @@
 About thrust
 ============
 
-Home: https://github.com/thrust/thrust
+Home: https://github.com/NVIDIA/thrust
 
 Package license: Apache-2.0
 
