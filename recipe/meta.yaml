@@ -10,17 +10,30 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: mkdir -p "$PREFIX"/include && cp -r thrust "$PREFIX"/include  # [not win]
+  number: 1
+  skip: true  # [(linux or win) and (cuda_compiler_version != "11.2")]
+  ignore_run_exports_from:
+    - {{ compiler('cuda') }}  # [not osx]
+  script_env:
+    # for some reason /usr/local/cuda is not added to $PATH in the docker image
+    - CUDA_HOME  # [ppc64le or aarch64]
 
 requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('cuda') }}  # [not osx]
+    - cmake >=3.15
+    - make
   run_constrained:
     - cub {{ version }}.*
 
 test:
   commands:
     - test -e "$PREFIX"/include/thrust/version.h  # [not win]
+    - test -e "$PREFIX"/lib/cmake/thrust/thrust-config.cmake  # [not win]
     - if not exist "%LIBRARY_INC%"\thrust\version.h exit 1  # [win]
+    - if not exist "%LIBRARY_LIB%"\cmake\thrust\thrust-config.cmake exit 1  # [win]
 
 about:
   home: https://github.com/NVIDIA/thrust
