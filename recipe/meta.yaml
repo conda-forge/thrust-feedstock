@@ -33,7 +33,7 @@ test:
     - test -e "$PREFIX"/include/thrust/version.h  # [not win]
     - test -e "$PREFIX"/lib/cmake/thrust/thrust-config.cmake  # [not win]
     - if not exist "%LIBRARY_INC%"\thrust\version.h exit 1  # [win]
-    - if not exist "%LIBRARY_LIB%"\thrust\thrust\thrust-config.cmake exit 1  # [win]
+    - if not exist "%LIBRARY_LIB%"\cmake\thrust\thrust-config.cmake exit 1  # [win]
 
 about:
   home: https://github.com/NVIDIA/thrust
