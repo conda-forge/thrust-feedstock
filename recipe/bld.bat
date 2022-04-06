@@ -1,7 +1,26 @@
 @echo ON
 
-rem Copy over the include dir
-robocopy thrust "%LIBRARY_INC%"\thrust /e
-if %ERRORLEVEL% GEQ 8 exit 1
+set "THRUST_BUILD_DIR=%SRC_DIR%\build"
+set "BUILD_TESTS=OFF"
+set "BUILD_EXAMPLES=OFF"
+set "BUILD_TYPE=Release"
+set "VERBOSE_FLAG=-v"
 
+mkdir -p %THRUST_BUILD_DIR%
+cd %SRC_DIR%
+
+cmake -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+      -DCMAKE_INSTALL_LIBDIR=%LIBRARY_LIB% ^
+      -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ^
+      -DTHRUST_ENABLE_HEADER_TESTING=%BUILD_TESTS% ^
+      -DTHRUST_ENABLE_TESTING=%BUILD_TESTS% ^
+      -DTHRUST_ENABLE_EXAMPLES=%BUILD_EXAMPLES% ^
+      -DTHRUST_INCLUDE_CUB_CMAKE=OFF ^
+      -DTHRUST_INSTALL_CUB_HEADERS=OFF ^
+      -B %THRUST_BUILD_DIR% ^
+      -S .
+
+cmake --build %THRUST_BUILD_DIR% --target install %VERBOSE_FLAG%
+
+if %ERRORLEVEL% neq 0 exit %ERRORLEVEL%
 exit 0
