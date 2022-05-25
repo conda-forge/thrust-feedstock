@@ -1,5 +1,5 @@
-{% set version = "1.16.0" %}
-{% set sha256 = "93b9553e3ee544e05395022bea67e6d600f8f3eb680950ec7cf73c0f55162487" %}
+{% set version = "1.15.0" %}
+{% set sha256 = "0eeaf5a77cd7cb143f3443bd96b215ae1c4eacf18a712762e6a5c85213f80cc2" %}
 
 package:
   name: thrust
@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [(linux or win) and (cuda_compiler_version != "11.2")]
   ignore_run_exports_from:
     - {{ compiler('cuda') }}  # [not osx]
